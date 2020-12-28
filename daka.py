@@ -52,17 +52,21 @@ if __name__ == "__main__":
     postdata1 = urllib.parse.urlencode(values1).encode("utf-8")
     opener.addheaders = [("User-Agent",'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36')]
     result1 = opener.open(response1.geturl(), postdata1)
+    
     decode_txt2 = result1.read().decode()
     _token = getToken(decode_txt2)
-    name = getName(decode_txt2)
+    isForSelf = '1' if len(sys.argv)==3 else '0'
+    name = sys.argv[4] if len(sys.argv)>3 else getName(decode_txt2)
+    sid = id if len(sys.argv)==3 else sys.argv[3]
+    
     formdata={
     '_token':_token,
     'cross_city':'无',
     'jiankangxinxi_muqianshentizhuangkuang':'正常',
-    'jibenxinxi_shifoubenrenshangbao':'1',
+    'jibenxinxi_shifoubenrenshangbao':isForSelf,
     'profile[suoshubanji]':'',
     'profile[xingming]':name,
-    'profile[xuegonghao]':id,
+    'profile[xuegonghao]':sid,
     'qitashixiang_qitaxuyaoshuomingdeshixiang':'',
     'xingchengxinxi_weizhishifouyoubianhua':'0',
     }
