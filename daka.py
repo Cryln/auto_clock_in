@@ -47,7 +47,7 @@ if __name__ == "__main__":
         "lt":lt,
         "pl":str(len(password)),
         "rsa":id+password+lt,
-        "ul":'8'
+        "ul":str(len(id))
     }
     postdata1 = urllib.parse.urlencode(values1).encode("utf-8")
     opener.addheaders = [("User-Agent",'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36')]
