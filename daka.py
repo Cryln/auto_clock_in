@@ -45,15 +45,15 @@ if __name__ == "__main__":
         "_eventId":"submit",
         "execution":"e1s1",
         "lt":lt,
-        "pl":'8',
+        "pl":str(len(password)),
         "rsa":id+password+lt,
         "ul":'8'
     }
     postdata1 = urllib.parse.urlencode(values1).encode("utf-8")
     opener.addheaders = [("User-Agent",'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36')]
-    result1 = opener.open(response1.geturl(), postdata1)
+    response2 = opener.open(response1.geturl(), postdata1)
     
-    decode_txt2 = result1.read().decode()
+    decode_txt2 = response2.read().decode()
     _token = getToken(decode_txt2)
     isForSelf = '1' if len(sys.argv)==3 else '0'
     name = sys.argv[4] if len(sys.argv)>3 else getName(decode_txt2)
@@ -71,5 +71,5 @@ if __name__ == "__main__":
     'xingchengxinxi_weizhishifouyoubianhua':'0',
     }
     postdata2 = urllib.parse.urlencode(formdata).encode("utf-8")
-    result2 = opener.open('https://e-report.neu.edu.cn/api/notes', postdata2)
-    print(result2.status)
+    response3 = opener.open('https://e-report.neu.edu.cn/api/notes', postdata2)
+    print(response3.status)
