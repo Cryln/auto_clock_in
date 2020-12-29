@@ -30,7 +30,8 @@ python daka.py 20182333 abc123 20186666 佩奇
 ### 使用 Github Actions 自动上报
 + folk your own copy of this repository to your account
 + set secrets{ USERNAME: [学号], PASSWORD:[密码] }
-+ 更多的我就不太清楚了，我也没试过folk别人的action，可能还需要在Actions页设置，细节在/.github/workflow/main.yml,防止意外，我是每2个小时自动打卡
++  ~~更多的我就不太清楚了，我也没试过folk别人的action，可能还需要在Actions页设置，细节在/.github/workflow/main.yml,防止意外，我是每2个小时自动打卡~~
++ 用室友账号试了一下：先folk，再去Actions里允许运行workflow，在点开项目Settings >> Secrets >> new repository secret。分别添加USERNAME,PASSWORD, value就是你的学号，密码。 
 
 TODO:
 想用js来实现，又是偶然看到iPad/iOS上的快捷指令支持JavaScript，可以放进Safari运行。但是我js有点菜
