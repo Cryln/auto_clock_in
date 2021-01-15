@@ -32,6 +32,7 @@ python daka.py 20182333 abc123 20186666 佩奇
 + set secrets{ USERNAME: [学号], PASSWORD:[密码] }
 +  ~~更多的我就不太清楚了，我也没试过folk别人的action，可能还需要在Actions页设置，细节在/.github/workflow/main.yml,防止意外，我是每2个小时自动打卡~~
 + 用室友账号试了一下：先fork；再点开项目Settings >> Secrets >> new repository secret。分别添加USERNAME,PASSWORD, value就是你的学号，密码；最后到Actions页，看到有一个灰色的，叫“CI”的workflow，点开，提示说它被默认禁用了，so enable it！
+> BTW, 用了这么久，发现由于网络的问题，会出现失败率很高的情况，可以通过设置任务的频率得到改善。在".github\workflows\main.yml" 里schedule >> cron 项里设置。 5个参数：分，时，天，月，年，空格隔开，*表示every，数字x表示第x个，x/y表示第x开始，每隔y
 
 TODO:
 想用js来实现，又是偶然看到iPad/iOS上的快捷指令支持JavaScript，可以放进Safari运行。但是我js有点菜
