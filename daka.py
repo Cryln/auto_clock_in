@@ -15,7 +15,7 @@ from http import cookiejar
 
 def getLt(response): 
     #获取流水号
-    pattern = re.compile(r"LT-[0-9]{6}-[0-9a-zA-Z]{30}-tpass")
+    pattern = re.compile(r"LT-[0-9]*-[0-9a-zA-Z]*-tpass")
     lt = pattern.findall(response)[0]
     return lt
 
